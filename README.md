@@ -2,6 +2,8 @@
 
 A standalone library for working with polygons.
 
+Runtimes are given in terms of the number of points.
+
 ### Construction
 
 ```js
@@ -10,6 +12,8 @@ var p = polygon();
 
 ### Add points
 
+Call `points` once or multiple times to add points.
+
 ```js
 p.points([[0, 0], [1, 0], [1, 1], [1, 2], [0, 1]]);
 ```
@@ -17,8 +21,14 @@ p.points([[0, 0], [1, 0], [1, 1], [1, 2], [0, 1]]);
 ### Get points
 
 ```js
-var points = p.points();
+p.points();
 //=> [[0, 0], [1, 0], [1, 1], [1, 2], [0, 1]]
+```
+
+### Clear points
+
+```js
+p.clear();
 ```
 
 ### Area
@@ -29,13 +39,25 @@ on [Wolfram MathWorld](http://mathworld.wolfram.com/PolygonArea.html).
 Area is signed and defined for a convex polygon to be positive if the points are
 arranged in counterclockwise order and negative if they are in clockwise order.
 
+O(n)
+
 ```js
-var area = p.area();
+p.area();
+//=> 1.5
 ```
 
-Methods below will be filled out as they are added.
-
 ### Perimeter
+
+Calculated as the sum of the
+[Euclidean distances](http://en.wikipedia.org/wiki/Euclidean_distance) between
+consecutive vertices.
+
+O(n)
+
+```js
+p.perimeter();
+//=> 5.414213562373095
+```
 
 ### Centroid
 

@@ -17,9 +17,17 @@
       return _polygon;
     }
 
+    _polygon.clear = function() {
+      _points = [];
+      return _polygon;
+    }
+
     _polygon.area = function() {
-      if (!_points.length) return 0;
-      else return area(_points);
+      return area(_points);
+    }
+
+    _polygon.perimeter = function() {
+      return perimeter(_points);
     }
 
     return _polygon;
@@ -33,12 +41,41 @@
    */
 
   function area(points) {
-    var _area = 0;
-    var length = points.length;
-    for (var i = 0; i < length - 1; i++) {
-      _area += points[i][0] * points[i + 1][1] - points[i + 1][0] * points[i][1];
+    if (points.length < 3) return 0;
+    var area = 0,
+        n = points.length,
+        i = -1,
+        a,
+        b = points[n - 1];
+    while (++i < n) {
+      a = b;
+      b = points[i];
+      area += a[0] * b[1] - a[1] * b[0];
     }
-    return _area / 2;
+    return area / 2;
+  }
+
+  /**
+   * Calculate the perimeter of a polygon using the sum of the Euclidean
+   * distances between consecutive points. O(|points|).
+   *
+   * @param {Array} points
+   */
+
+  function perimeter(points) {
+    if (points.length < 3) return 0;
+    var perimeter = 0,
+        n = points.length,
+        i = -1,
+        a,
+        b = points[n - 1];
+    while (++i < n) {
+      a = b;
+      b = points[i];
+      perimeter += Math.sqrt((a[0] - b[0]) * (a[0] - b[0]) +
+                             (a[1] - b[1]) * (a[1] - b[1]));
+    }
+    return perimeter;
   }
 
   if (typeof define === "function" && define.amd) {
