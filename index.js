@@ -17,7 +17,7 @@ polygonPrototype.points = function(_) {
   if (!arguments.length) return this;
   for (var i = 0; i < _.length; i++) this.push(_[i]);
   return this;
-}
+};
 
 polygonPrototype.area = function() {
   var area = 0,
@@ -46,7 +46,7 @@ polygonPrototype.perimeter = function() {
                            (a[1] - b[1]) * (a[1] - b[1]));
   }
   return perimeter;
-}
+};
 
 polygonPrototype.centroid = function() {
   var cx = 0,
@@ -65,7 +65,7 @@ polygonPrototype.centroid = function() {
     cy += (a[1] + b[1]) * c;
   }
   return [cx * k, cy * k];
-}
+};
 
 if (typeof define === "function" && define.amd) {
   define(polygon);
