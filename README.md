@@ -76,9 +76,10 @@ p.perimeter();
 ### Centroid
 
 ![Cx](http://upload.wikimedia.org/math/e/e/1/ee14cbb2b170c4bb435f1d84e78f6d66.png)
+
 ![Cy](http://upload.wikimedia.org/math/a/4/c/a4cee81a1d18e4d067f66d4d40a8a1fe.png)
 
-[http://en.wikipedia.org/wiki/Centroid#Centroid_of_polygon](http://en.wikipedia.org/wiki/Centroid#Centroid_of_polygon).
+[http://en.wikipedia.org/wiki/Centroid#Centroid_of_polygon](http://en.wikipedia.org/wiki/Centroid#Centroid_of_polygon)
 
 O(n)
 
