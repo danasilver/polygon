@@ -19,6 +19,13 @@ polygonPrototype.points = function(_) {
   return this;
 };
 
+polygonPrototype.clear = function() {
+  while (this.length) {
+    this.pop();
+  }
+  return this;
+};
+
 polygonPrototype.area = function() {
   var area = 0,
       n = this.length,

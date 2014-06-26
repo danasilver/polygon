@@ -16,6 +16,16 @@ describe("Polygon", function() {
     });
   });
 
+  describe(".clear()", function() {
+    it("should return an empty polygon subclassed array", function() {
+      var p = polygon().points([[0, 0], [1, 0], [1, 1], [0, 1]]);
+      p.clear();
+      assert.deepEqual([], p);
+      assert.equal(0, p.length);
+      assert.deepEqual(polygon().points(), p.points());
+    });
+  });
+
   describe(".area()", function() {
     it("should return the area of the polygon", function() {
       var p = polygon().points([[0, 0], [1, 0], [1, 1], [0, 1]]);
