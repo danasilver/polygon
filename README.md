@@ -24,7 +24,7 @@ $ npm test
 var p = polygon();
 ```
 
-### Add points
+### Points
 
 Call `points` once or multiple times to add points.
 
@@ -32,14 +32,14 @@ Call `points` once or multiple times to add points.
 p.points([[0, 0], [1, 0], [1, 1], [1, 2], [0, 1]]);
 ```
 
-### Get points
+Call `points` with no arguments to get the points.
 
 ```js
 p.points();
 //=> [[0, 0], [1, 0], [1, 1], [1, 2], [0, 1]]
 ```
 
-### Clear points
+### Clear
 
 ```js
 p.clear();
@@ -74,6 +74,18 @@ p.perimeter();
 ```
 
 ### Centroid
+
+![Cx](http://upload.wikimedia.org/math/e/e/1/ee14cbb2b170c4bb435f1d84e78f6d66.png)
+![Cy](http://upload.wikimedia.org/math/a/4/c/a4cee81a1d18e4d067f66d4d40a8a1fe.png)
+
+[http://en.wikipedia.org/wiki/Centroid#Centroid_of_polygon](http://en.wikipedia.org/wiki/Centroid#Centroid_of_polygon).
+
+O(n)
+
+```js
+p.centroid();
+//=> [0.5555555555555556, 0.7777777777777777]
+```
 
 ### Point in Polygon
 
