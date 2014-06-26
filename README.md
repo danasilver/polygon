@@ -4,6 +4,20 @@ A standalone library for working with polygons.
 
 Runtimes are given in terms of the number of points.
 
+### Testing
+
+Install the dev dependencies:
+
+```sh
+$ npm install
+```
+
+And run the tests:
+
+```sh
+$ npm test
+```
+
 ### Construction
 
 ```js
